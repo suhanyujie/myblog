@@ -1,5 +1,6 @@
-package com.su.web.utils;
+package com.su.web.middleware;
 
+import com.su.web.utils.Response;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 

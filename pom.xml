@@ -14,6 +14,14 @@
 	<name>myblog</name>
 	<description>myblog</description>
 	<url/>
+	<!-- 手动添加 1 -->
+	<packaging>pom</packaging>
+	<!-- 手动添加 2 -->
+	<modules>
+		<module>m-web</module>
+		<module>m-service</module>
+		<module>common</module>
+	</modules>
 	<licenses>
 		<license/>
 	</licenses>
@@ -28,6 +36,7 @@
 	</scm>
 	<properties>
 		<java.version>17</java.version>
+		<mybatisPlus.version>3.1.2</mybatisPlus.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -43,7 +52,6 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>3.0.4</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
@@ -60,12 +68,21 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter-test</artifactId>
-			<version>3.0.4</version>
-			<scope>test</scope>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.11.0</version>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus-boot-starter</artifactId>
+				<version>${mybatisPlus.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<plugins>
