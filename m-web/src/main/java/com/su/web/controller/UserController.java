@@ -1,6 +1,7 @@
 package com.su.web.controller;
 
 import com.su.web.service.impl.UserSvc;
+import com.su.web.utils.Response;
 import com.su.web.vo.UserVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +18,7 @@ public class UserController {
     @GetMapping(path = "/user/hello")
     public <E> E hello() {
         List<UserVo> list = this.userSvc.getUserList();
-        return (E) "ok";
+        return (E) Response.success(list);
     }
 
     /// createUser updateUser disableUser deleteUser

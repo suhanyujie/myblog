@@ -8,6 +8,7 @@ import lombok.Data;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Data
 @TableName("`user`")
@@ -17,21 +18,21 @@ public class UserEntity implements Serializable {
     private static final long serialVersionUid = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
-    private int id;
-    private int nickname;
-    private int email;
-    private int password;
-    private int avatar;
+    private Long id;
+    private String nickname;
+    private String email;
+    private String password;
+    private String avatar;
     @TableField("is_active")
     private int isActive;
     @TableField("created_at")
-    private int createdAt;
+    private LocalDateTime createdAt;
     @TableField("updated_at")
-    private int updatedAt;
+    private LocalDateTime updatedAt;
     @TableField("deleted_at")
-    private int deletedAt;
+    private LocalDateTime deletedAt;
     @TableField("oauthProvider")
-    private int oauth_provider;
+    private String oauth_provider;
     @TableField("oauth_id")
-    private int oauthId;
+    private String oauthId;
 }

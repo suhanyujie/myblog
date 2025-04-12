@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class UserVo {
-    private int id;
-    private int nickname;
-    private int email;
-    private int avatar;
+    private Long id;
+    private String nickname;
+    private String email;
+    private String avatar;
 }
