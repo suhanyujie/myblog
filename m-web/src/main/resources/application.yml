@@ -9,6 +9,9 @@ spring:
 
 server:
   port: 7005
-debug: true
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+logging:
+  level:
+    root: info
+debug: false

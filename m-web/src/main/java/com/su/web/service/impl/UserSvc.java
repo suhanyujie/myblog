@@ -5,12 +5,14 @@ import com.su.web.entity.UserEntity;
 import com.su.web.mapper.UserMapper;
 import com.su.web.service.IUserSvc;
 import com.su.web.vo.UserVo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 public class UserSvc implements IUserSvc {
 
@@ -26,6 +28,7 @@ public class UserSvc implements IUserSvc {
             tmpVo.setNickname(item.getNickname());
             tmpVo.setEmail(item.getEmail());
             tmpVo.setAvatar(item.getAvatar());
+            log.info("user item: {} | {}", tmpVo, item.getNickname());
             return tmpVo;
         }).collect(Collectors.toList());
         return voList;
