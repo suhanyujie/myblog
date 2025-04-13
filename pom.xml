@@ -36,7 +36,7 @@
     </scm>
     <properties>
         <java.version>17</java.version>
-        <mybatisPlus.version>3.1.2</mybatisPlus.version>
+        <mybatisPlus.version>3.5.11</mybatisPlus.version>
         <logback.version>1.5.18</logback.version>
     </properties>
     <dependencies>

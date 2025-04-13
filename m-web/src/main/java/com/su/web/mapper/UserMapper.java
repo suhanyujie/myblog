@@ -10,7 +10,7 @@ import java.util.List;
 
 @Mapper
 public interface UserMapper extends BaseMapper<UserEntity> {
-    List<UserEntity> getList();
+    List<UserEntity> getList(UserQueryDto userQueryDto);
 
     UserEntity getUserByEmail(String email);
 }

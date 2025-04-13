@@ -19,9 +19,8 @@ public class UserSvc implements IUserSvc {
     @Autowired
     private UserMapper userMapper;
 
-    public List<UserVo> getUserList() {
-        UserQueryDto userQueryDto = UserQueryDto.builder().ids(new Integer[]{1, 2, 3}).build();
-        List<UserEntity> users = userMapper.getList();
+    public List<UserVo> getUserList(UserQueryDto userQueryDto) {
+        List<UserEntity> users = userMapper.getList(userQueryDto);
         List<UserVo> voList = users.stream().map(item -> {
             UserVo tmpVo = new UserVo();
             tmpVo.setId(item.getId());
